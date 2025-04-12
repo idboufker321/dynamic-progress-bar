@@ -18,7 +18,7 @@
     <script>
       console.log("Hello, world!");
 
-      function startProgressBar(sec) {
+      /*function startProgressBar(sec) {
         const progressBar = document.getElementById("progressBar");
         const stateElement = document.querySelector(".state");
         const totalTime = sec * 1000;
@@ -37,7 +37,29 @@
           }
         }, interval);
       }
+      */
+      function startProgressBar(sec) {
+        const progressBar = document.getElementById("progressBar");
+        const stateElement = document.querySelector(".state");
+        const totalTime = sec * 1000;
+        const interval = 10;
+        const increment = 100 / (totalTime / interval);
 
+        let width = 0;
+
+        const timer = setInterval(() => {
+          if (width >= 100) {
+            width = 100;
+            progressBar.style.width = width + "%";
+            stateElement.textContent = "Completed successfully";
+            clearInterval(timer);
+          } else {
+            progressBar.style.width = width + "%";
+            stateElement.textContent = Math.floor(width) + "%";
+            width += increment;
+          }
+        }, interval);
+      }
       startProgressBar(5);
     </script>
   </body>
