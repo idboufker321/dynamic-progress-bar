@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <title>Progress bar</title>
+    <title>Document</title>
   </head>
   <body>
     <div class="container">
@@ -15,7 +15,6 @@
       </div>
       <div class="state"></div>
     </div>
-
     <script>
       console.log("Hello, world!");
 
@@ -31,13 +30,14 @@
         const timer = setInterval(() => {
           if (width >= 100) {
             clearInterval(timer);
-            stateElement.textContent = "Completed succesfully";
+            stateElement.textContent = "Completed successfully";
           } else {
-            width = +increment;
+            width += increment;
             progressBar.style.width = width + "%";
           }
         }, interval);
       }
+
       startProgressBar(5);
     </script>
   </body>
