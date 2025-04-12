@@ -1,0 +1,40 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.progress-section {
+  width: 500px;
+  height: 0 20px;
+}
+
+#progressContainer {
+  width: 100%;
+  height: 8px;
+  background-color: rgba(13, 109, 253, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+#progressBar {
+  width: 0;
+  height: 100%;
+  background-color: #0d6efd;
+  border-radius: 4pc;
+  transition: width 0.1s linear;
+}
+
+.state {
+  color: green;
+}

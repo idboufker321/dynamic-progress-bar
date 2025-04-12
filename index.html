@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Progress bar</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="progress-section">
+        <div id="progressContainer">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+      <div class="state"></div>
+    </div>
+
+    <script>
+      console.log("Hello, world!");
+
+      function startProgressBar(sec) {
+        const progressBar = document.getElementById("progressBar");
+        const stateElement = document.querySelector(".state");
+        const totalTime = sec * 1000;
+        const interval = 10;
+        const increment = 100 / (totalTime / interval);
+
+        let width = 0;
+
+        const timer = setInterval(() => {
+          if (width >= 100) {
+            clearInterval(timer);
+            stateElement.textContent = "Completed succesfully";
+          } else {
+            width = +increment;
+            progressBar.style.width = width + "%";
+          }
+        }, interval);
+      }
+      startProgressBar(5);
+    </script>
+  </body>
+</html>
